@@ -4,6 +4,7 @@ import shutil
 import matplotlib.pyplot as plt
 import h5py
 import argparse
+import os
 
 parser = argparse.ArgumentParser(description='Script for preperaing dataset by considering patient ID',
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
