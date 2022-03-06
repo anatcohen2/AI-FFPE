@@ -57,22 +57,48 @@ test_output = os.path.join(args.output_dir,"testB")
 
 for file in natsorted(glob.glob(ffpe_path)):   
     case_id = file.split("/")[-1]
+    print(case_id)
     png_cntr = 0
 
     if (case_id.split("-")[0] +"-"+ case_id.split("-")[1]+"-"+ case_id.split("-")[2]) in train_id:
         hdf = h5py.File(file)
         for i in list(hdf['imgs']):
-            plt.imsave(train_output+file.split("/")[-1]+"."+str(png_cntr) +".png",i)
+            plt.imsave(os.path.join(train_output, file.split("/")[-1]+"."+str(png_cntr) + ".png"), i)
             png_cntr+=1
     elif (case_id.split("-")[0] +"-"+ case_id.split("-")[1]+"-"+ case_id.split("-")[2]) in val_id:
         hdf = h5py.File(file)
         for i in list(hdf['imgs']):
-            plt.imsave(val_output+file.split("/")[-1]+"."+str(png_cntr) +".png",i)
+            plt.imsave(os.path.join(val_output, file.split("/")[-1]+"."+str(png_cntr) +".png"), i)
             png_cntr+=1  
       
     elif (case_id.split("-")[0] +"-"+ case_id.split("-")[1]+"-"+ case_id.split("-")[2]) in test_id:
         hdf = h5py.File(file)
         for i in list(hdf['imgs']):
-            plt.imsave(test_output+file.split("/")[-1]+"."+str(png_cntr) +".png",i)
+            plt.imsave(os.path.join(test_output, file.split("/")[-1]+"."+str(png_cntr) +".png"), i)
             png_cntr+=1
 
+train_output = os.path.join(args.output_dir,"trainA")
+val_output = os.path.join(args.output_dir,"valA")
+test_output = os.path.join(args.output_dir,"testA")
+
+for file in natsorted(glob.glob(frozen_path)):
+    case_id = file.split("/")[-1]
+    print(case_id)
+    png_cntr = 0
+
+    if (case_id.split("-")[0] + "-" + case_id.split("-")[1] + "-" + case_id.split("-")[2]) in train_id:
+        hdf = h5py.File(file)
+        for i in list(hdf['imgs']):
+            plt.imsave(os.path.join(train_output, file.split("/")[-1]+"."+str(png_cntr) + ".png"), i)
+            png_cntr += 1
+    elif (case_id.split("-")[0] + "-" + case_id.split("-")[1] + "-" + case_id.split("-")[2]) in val_id:
+        hdf = h5py.File(file)
+        for i in list(hdf['imgs']):
+            plt.imsave(os.path.join(val_output, file.split("/")[-1]+"."+str(png_cntr) +".png"), i)
+            png_cntr += 1
+
+    elif (case_id.split("-")[0] + "-" + case_id.split("-")[1] + "-" + case_id.split("-")[2]) in test_id:
+        hdf = h5py.File(file)
+        for i in list(hdf['imgs']):
+            plt.imsave(os.path.join(test_output, file.split("/")[-1]+"."+str(png_cntr) +".png"), i)
+            png_cntr += 1
