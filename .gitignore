@@ -1,2 +1,18 @@
 
 .idea/
+
+data/FFPE/masks/
+
+data/FFPE/patches/
+
+data/FFPE/stitches/
+
+data/FFPE/WSI/
+
+data/FS/masks/
+
+data/FS/patches/
+
+data/FS/stitches/
+
+data/FS/WSI/
