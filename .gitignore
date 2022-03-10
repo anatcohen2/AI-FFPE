@@ -16,3 +16,17 @@ data/FS/patches/
 data/FS/stitches/
 
 data/FS/WSI/
+
+ssh key/
+
+data/testB/
+
+data/trainA/
+
+data/testA/
+
+data/trainB/
+
+data/valA/
+
+data/valB/
