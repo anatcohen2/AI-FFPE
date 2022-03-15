@@ -30,3 +30,11 @@ data/trainB/
 data/valA/
 
 data/valB/
+
+pretrained_models/Brain/CUT/
+
+pretrained_models/Brain/CycleGAN/
+
+pretrained_models/Brain/FastCUT/
+
+pretrained_models/
